@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="'/posts/' + id" class="post-preview">
+  <nuxt-link :to="postLink" class="post-preview">
     <article>
       <!-- 'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg' -->
       <!-- 'https://spectrum.ieee.org/image/MzI4MDQ2Mg' -->
@@ -32,6 +32,15 @@ export default {
     thumbnail: {
       type: String,
       required: true
+    },
+    isAdmin: {
+      type: Boolean,
+      required: true
+    }
+  },
+  computed: {
+    postLink() {
+      return this.isAdmin ? `/admin/${this.id}` : `/posts/${this.id}`;
     }
   }
 }

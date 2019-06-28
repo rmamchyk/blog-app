@@ -2,18 +2,21 @@
   <section class="post-list">
     <PostPreview
       id="1"
+      :isAdmin="isAdmin"
       thumbnail="https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
       title="Hello there!"
       previewText="This is my first post!"
       />
     <PostPreview
       id="2"
+      :isAdmin="isAdmin"
       thumbnail="https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
       title="Hello there - the second time!"
       previewText="This is my second post!"
       />
     <PostPreview
       id="3"
+      :isAdmin="isAdmin"
       thumbnail="https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg"
       title="Hi!"
       previewText="This is my third post!"
@@ -27,6 +30,12 @@ import PostPreview from '@/components/posts/PostPreview';
 export default {
   components: {
     PostPreview
+  },
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
